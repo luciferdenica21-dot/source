@@ -123,24 +123,24 @@ const Home = () => {
 
         {/* Right Content Blocks */}
         <div className="space-y-4 md:space-y-6">
-          <div className="relative p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white/30 backdrop-blur-xl border border-white/40 shadow-xl transition-all duration-500 hover:bg-brand-magenta hover:text-white group overflow-hidden">
+          <div className="relative p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white/30 backdrop-blur-xl border border-white/40 shadow-xl transition-all duration-500 group overflow-hidden">
             <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-10 h-10 md:w-12 md:h-12 bg-brand-magenta rounded-full shadow-lg border-4 border-white/20 z-10"></div>
-            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 uppercase relative z-10 border-b border-white/10 pb-2">For individuals</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 uppercase relative z-10 border-b border-brand-dark/10 pb-2">For individuals</h3>
             <ul className="space-y-3 text-base md:text-lg opacity-90 list-inside font-bold relative z-10">
-              <li><Link to="/online-course" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• Online course →</Link></li>
-              <li><Link to="/coaching" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• 1:1 coaching →</Link></li>
-              <li><Link to="/agency" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• Agency Cycle →</Link></li>
-              <li><Link to="/money" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• Money Money course →</Link></li>
-              <li><Link to="/calendar" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• Community →</Link></li>
+              <li><Link to="/online-course" className="hover:text-brand-magenta transition-colors block py-1">• Online course →</Link></li>
+              <li><Link to="/coaching" className="hover:text-brand-magenta transition-colors block py-1">• 1:1 coaching →</Link></li>
+              <li><Link to="/agency" className="hover:text-brand-magenta transition-colors block py-1">• Agency Cycle →</Link></li>
+              <li><Link to="/money" className="hover:text-brand-magenta transition-colors block py-1">• Money Money course →</Link></li>
+              <li><Link to="/calendar" className="hover:text-brand-magenta transition-colors block py-1">• Community →</Link></li>
             </ul>
           </div>
 
-          <div className="relative p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white/30 backdrop-blur-xl border border-white/40 shadow-xl transition-all duration-500 hover:bg-brand-green hover:text-white group overflow-hidden">
+          <div className="relative p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white/30 backdrop-blur-xl border border-white/40 shadow-xl transition-all duration-500 group overflow-hidden">
             <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-10 h-10 md:w-12 md:h-12 bg-brand-green rounded-full shadow-lg border-4 border-white/20 z-10"></div>
-            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 uppercase relative z-10 border-b border-white/10 pb-2">For organisations</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 uppercase relative z-10 border-b border-brand-dark/10 pb-2">For organisations</h3>
             <ul className="space-y-3 text-base md:text-lg opacity-90 list-inside font-bold relative z-10">
-              <li><Link to="/dei" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• DEI activities / simulations / workshops →</Link></li>
-              <li><Link to="/team" className="hover:opacity-100 transition-opacity group-hover:text-white/90 block py-1">• Team change / growth / transformation →</Link></li>
+              <li><Link to="/dei" className="hover:text-brand-green transition-colors block py-1">• DEI activities / simulations / workshops →</Link></li>
+              <li><Link to="/team" className="hover:text-brand-green transition-colors block py-1">• Team change / growth / transformation →</Link></li>
             </ul>
           </div>
         </div>
@@ -433,9 +433,6 @@ const MyAccount = ({ isLoggedIn, onLogin }) => {
   return (
     <div className="min-h-screen pb-24 md:pb-40 pt-8 md:pt-12 px-6 md:px-10 bg-brand-dark text-white text-center flex items-center justify-center">
       <div className="max-w-md w-full bg-white/10 backdrop-blur-xl p-8 md:p-14 rounded-2xl md:rounded-[3rem] text-white shadow-2xl border border-white/20 relative">
-        <div className="absolute top-8 left-8">
-          <BackButton />
-        </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 underline decoration-brand-magenta decoration-4 underline-offset-8 uppercase">My Account</h2>
         <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 uppercase">Log In</h3>
         {error && (
