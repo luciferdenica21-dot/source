@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 
+// --- Assets ---
+import logo from './assets/images/logo.png';
+import aboutImg from './assets/images/about.png';
+import onlineCourseBg from './assets/images/onlinecourse.jpg';
+import coachingBg from './assets/images/couching.jpg';
+import moneyBg from './assets/images/money.png';
+
 // --- Components ---
 
 const ScrollToTop = () => {
@@ -11,12 +18,10 @@ const ScrollToTop = () => {
   return null;
 };
 
-const BackButton = ({ variant = 'dark' }) => {
+const BackButton = () => {
   const navigate = useNavigate();
-  const baseStyles = "inline-flex items-center gap-2 mb-8 text-sm font-bold uppercase tracking-widest transition-all group px-4 py-2 rounded-lg";
-  const colors = variant === 'light' 
-    ? "text-white hover:bg-white hover:text-brand-dark" 
-    : "text-brand-dark hover:bg-brand-dark hover:text-white";
+  const baseStyles = "inline-flex items-center gap-2 mb-8 text-sm font-bold uppercase tracking-widest transition-all group px-6 py-3 rounded-full shadow-lg";
+  const colors = "bg-brand-dark text-white hover:bg-brand-brown";
 
   return (
     <button onClick={() => navigate(-1)} className={`${baseStyles} ${colors}`}>
@@ -153,14 +158,14 @@ const AboutMe = () => (
         {/* Intro Header */}
         <div className="space-y-12">
           <div className="flex items-center gap-4 md:gap-6">
-            <img src="/logo.png" alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+            <img src={logo} alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
             <h1 className="text-4xl md:text-6xl font-medium uppercase">About me</h1>
           </div>
           
           <div className="text-lg md:text-xl leading-relaxed opacity-90 block">
             <div className="float-right ml-12 mb-10 w-full md:w-[400px] relative group">
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl shadow-2xl">
-                <img src="/about.png" alt="About" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={aboutImg} alt="About" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
             
@@ -264,7 +269,7 @@ const DEIActivities = () => (
       <BackButton />
       <div className="p-8 md:p-16 bg-white rounded-2xl md:rounded-[3rem] shadow-sm border border-brand-dark/5">
          <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8 mb-8 md:mb-10">
-           <img src="/logo.png" alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0" />
+           <img src={logo} alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0" />
            <h3 className="text-3xl md:text-6xl font-bold leading-tight uppercase">DEI activities / simulations / workshops</h3>
          </div>
          <div className="md:ml-24 space-y-6">
@@ -285,7 +290,7 @@ const TeamChange = () => (
       <BackButton />
       <div className="p-8 md:p-16 bg-white rounded-2xl md:rounded-[3rem] shadow-sm border border-brand-dark/5">
          <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8 mb-8 md:mb-10">
-           <img src="/logo.png" alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0" />
+           <img src={logo} alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0" />
            <h3 className="text-3xl md:text-6xl font-bold leading-tight uppercase">Team change / growth / transformation work</h3>
          </div>
          <div className="md:ml-24 space-y-6">
@@ -305,14 +310,14 @@ const OnlineCoursePage = () => {
   return (
     <div className="min-h-screen pb-24 md:pb-40 pt-8 md:pt-12 px-6 md:px-10 relative overflow-hidden text-brand-dark">
       <div className="absolute inset-0 -z-10">
-        <img src="/onlinecourse.jpg" alt="Online Course Background" className="w-full h-full object-cover" />
+        <img src={onlineCourseBg} alt="Online Course Background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
       </div>
       <CoursePopup isOpen={showCoursePopup} onClose={() => setShowCoursePopup(false)} />
       <div className="max-w-6xl mx-auto">
         <BackButton />
         <div className="bg-white/60 backdrop-blur-xl p-10 md:p-20 rounded-2xl md:rounded-[4rem] border border-white/50 shadow-2xl text-center">
-          <img src="/logo.png" alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto mb-8 md:mb-10" />
+          <img src={logo} alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto mb-8 md:mb-10" />
           <h2 className="text-4xl md:text-7xl font-bold mb-8 md:mb-12 tracking-tight leading-tight uppercase">Online course</h2>
           <ul className="space-y-4 md:space-y-6 text-lg md:text-2xl opacity-80 mb-10 md:mb-16 leading-relaxed">
             <li>Description of the process and the goals</li>
@@ -334,7 +339,7 @@ const OnlineCoursePage = () => {
 const CoachingPage = () => (
   <div className="min-h-screen pb-24 md:pb-40 pt-8 md:pt-12 px-6 md:px-10 relative overflow-hidden text-brand-dark">
     <div className="absolute inset-0 -z-10">
-      <img src="/couching.jpg" alt="Coaching Background" className="w-full h-full object-cover" />
+      <img src={coachingBg} alt="Coaching Background" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
     </div>
     <div className="max-w-6xl mx-auto">
@@ -342,7 +347,7 @@ const CoachingPage = () => (
       <div className="bg-white/60 backdrop-blur-xl p-10 md:p-16 rounded-2xl md:rounded-[3rem] border border-white/50 flex flex-col justify-between shadow-2xl">
         <div>
           <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
-            <img src="/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+            <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
             <h3 className="text-3xl md:text-5xl font-bold uppercase">1:1 coaching</h3>
           </div>
           <p className="text-lg md:text-xl opacity-70 mb-8 leading-relaxed">contracting (text with roles, responsibilities, logistics)</p>
@@ -362,7 +367,7 @@ const AgencyCyclePage = () => (
            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80" alt="Shiny" className="w-full h-full object-cover opacity-20" />
         </div>
         <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-10">
-          <img src="/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+          <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
           <h3 className="text-4xl md:text-5xl font-bold uppercase">Agency Cycle</h3>
         </div>
         <ul className="space-y-3 text-lg md:text-xl opacity-80 mb-10 md:mb-12 font-medium">
@@ -380,13 +385,13 @@ const AgencyCyclePage = () => (
 const MoneyCoursePage = () => (
   <div className="min-h-screen pb-24 md:pb-40 pt-8 md:pt-12 px-6 md:px-10 relative overflow-hidden text-brand-dark">
     <div className="absolute inset-0 -z-10">
-      <img src="/money.png" alt="Money Course Background" className="w-full h-full object-cover" />
+      <img src={moneyBg} alt="Money Course Background" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
     </div>
     <div className="max-w-6xl mx-auto text-center">
       <BackButton />
       <div className="bg-white/60 backdrop-blur-xl p-10 md:p-20 rounded-2xl md:rounded-[4rem] border border-white/50 shadow-2xl">
-        <img src="/logo.png" alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto mb-8 md:mb-10" />
+        <img src={logo} alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto mb-8 md:mb-10" />
         <h2 className="text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight leading-tight uppercase">Money Money course</h2>
         <ul className="space-y-3 md:space-y-4 text-xl md:text-2xl opacity-80 mb-10 md:mb-12">
           <li>Description of the process and the goals</li>
@@ -429,7 +434,7 @@ const MyAccount = ({ isLoggedIn, onLogin }) => {
     <div className="min-h-screen pb-24 md:pb-40 pt-8 md:pt-12 px-6 md:px-10 bg-brand-dark text-white text-center flex items-center justify-center">
       <div className="max-w-md w-full bg-white/10 backdrop-blur-xl p-8 md:p-14 rounded-2xl md:rounded-[3rem] text-white shadow-2xl border border-white/20 relative">
         <div className="absolute top-8 left-8">
-          <BackButton variant="light" />
+          <BackButton />
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 underline decoration-brand-magenta decoration-4 underline-offset-8 uppercase">My Account</h2>
         <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 uppercase">Log In</h3>
@@ -536,7 +541,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen flex flex-col relative pb-16 md:pb-20">
       <nav className="fixed top-0 w-full z-50 px-4 md:px-10 py-4 md:py-6 flex justify-between items-center bg-[#EBE7E4]/90 backdrop-blur-md border-b border-brand-dark/5 text-brand-dark shadow-sm">
         <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3 text-2xl md:text-3xl font-bold uppercase tracking-tighter hover:text-brand-magenta transition-colors">
-          <img src="/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+          <img src={logo} alt="Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
           SOURCE
         </Link>
         <div className="flex gap-4 md:gap-8 font-bold uppercase tracking-widest text-[10px] md:text-xs items-center">
