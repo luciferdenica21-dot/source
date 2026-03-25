@@ -12,7 +12,7 @@ export default {
         'brand-dark': '#101710',
         'brand-brown': '#715549',
         'brand-beige': '#A89E91',
-        'brand-magenta': '#D1305C',
+        'brand-magenta': '#C0264D',
       },
       fontFamily: {
         'lora': ['Lora', 'serif'],

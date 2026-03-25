@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 70%;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 85%;
+    }
+  }
   body {
     @apply font-lora text-brand-dark bg-white;
   }
